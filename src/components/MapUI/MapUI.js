@@ -1,20 +1,30 @@
 import React from 'react';
-import { withGoogleMap, GoogleMap } from 'react-google-maps';
+import { withGoogleMap, GoogleMap, Marker } from 'react-google-maps';
 
 import './MapUI.css'
 
 export default class MapUI extends React.Component {
+
+  constructor(props){
+    super(props);
+  }
+
+
   render() {
+
     const GoogleMapExample = withGoogleMap(props => (
       <GoogleMap
-        defaultCenter = { { lat: 40.756795, lng: -73.954298 } }
-        defaultZoom = { 13 }
+        center = { this.props.latLng }
+        zoom = { 13 }
       >
+       {props.isMarkerShown && <Marker position={this.props.latLng} />}
       </GoogleMap>
    ));
    return(
       <div>
         <GoogleMapExample
+          isMarkerShown
+          markerPosition={this.props.latLng}
           containerElement={ <div className="containerElement"/> }
           mapElement={ <div className="mapElement"/> }
         />
