@@ -1,0 +1,25 @@
+.ListView {
+  width: 300px;
+  border: 1px solid #ccc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* 
+.dataList {
+  background-color: lightgrey;
+  width: 380px;
+  padding: 50px;
+  margin: 20px;
+} */
+
+.data{
+    height: 76px;
+    width: 280px;
+    padding-left: 10px;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: lightgrey;
+    margin-top: 2px;
+    margin-bottom: 1px;
+}
